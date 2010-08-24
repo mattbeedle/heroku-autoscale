@@ -28,7 +28,7 @@ end
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |s|
-    s.name    = "heroku-autoscale"
+    s.name    = "mbeedle-heroku-autoscale"
     s.version = Heroku::Autoscale::VERSION
 
     s.summary     = "Autoscale your Heroku dynos"
