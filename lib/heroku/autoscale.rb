@@ -23,10 +23,9 @@ module Heroku
         else
           autoscale(env)
         end
-
-        app.call(env)
       rescue RestClient::BadGateway => e
       end
+      app.call(env)
     end
 
 private ######################################################################
