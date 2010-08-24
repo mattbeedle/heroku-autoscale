@@ -17,13 +17,16 @@ module Heroku
     end
 
     def call(env)
-      if options[:defer]
-        EventMachine.defer { autoscale(env) }
-      else
-        autoscale(env)
-      end
+      begin
+        if options[:defer]
+          EventMachine.defer { autoscale(env) }
+        else
+          autoscale(env)
+        end
 
-      app.call(env)
+        app.call(env)
+      rescue RestClient::BadGateway => e
+      end
     end
 
 private ######################################################################
