@@ -8,10 +8,10 @@ Gem::Specification.new do |s|
   s.version = "0.2.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["David Dollar"]
-  s.date = %q{2010-08-24}
+  s.authors = ["Matt Beedle"]
+  s.date = %q{2010-10-18}
   s.description = %q{Autoscale your Heroku dynos}
-  s.email = %q{ddollar@gmail.com}
+  s.email = %q{mattbeedle@googlemail.com}
   s.extra_rdoc_files = [
     "README.md"
   ]
@@ -22,14 +22,14 @@ Gem::Specification.new do |s|
      "spec/heroku/autoscale_spec.rb",
      "spec/spec_helper.rb"
   ]
-  s.homepage = %q{http://github.com/ddollar/heroku-autoscale}
+  s.homepage = %q{http://github.com/mbeedle/heroku-autoscale}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.7}
   s.summary = %q{Autoscale your Heroku dynos}
   s.test_files = [
-    "spec/spec_helper.rb",
-     "spec/heroku/autoscale_spec.rb"
+    "spec/heroku/autoscale_spec.rb",
+     "spec/spec_helper.rb"
   ]
 
   if s.respond_to? :specification_version then
@@ -43,7 +43,7 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<rr>, ["~> 0.10.11"])
       s.add_development_dependency(%q<rspec>, ["~> 2.0.0"])
       s.add_runtime_dependency(%q<eventmachine>, [">= 0"])
-      s.add_runtime_dependency(%q<heroku>, ["~> 1.9"])
+      s.add_runtime_dependency(%q<heroku>, [">= 1.10"])
       s.add_runtime_dependency(%q<rack>, ["~> 1.0"])
     else
       s.add_dependency(%q<rack-test>, ["~> 0.5.4"])
@@ -52,7 +52,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<rr>, ["~> 0.10.11"])
       s.add_dependency(%q<rspec>, ["~> 2.0.0"])
       s.add_dependency(%q<eventmachine>, [">= 0"])
-      s.add_dependency(%q<heroku>, ["~> 1.9"])
+      s.add_dependency(%q<heroku>, [">= 1.10"])
       s.add_dependency(%q<rack>, ["~> 1.0"])
     end
   else
@@ -62,7 +62,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<rr>, ["~> 0.10.11"])
     s.add_dependency(%q<rspec>, ["~> 2.0.0"])
     s.add_dependency(%q<eventmachine>, [">= 0"])
-    s.add_dependency(%q<heroku>, ["~> 1.9"])
+    s.add_dependency(%q<heroku>, [">= 1.10"])
     s.add_dependency(%q<rack>, ["~> 1.0"])
   end
 end

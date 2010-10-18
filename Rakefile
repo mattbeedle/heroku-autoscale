@@ -12,9 +12,9 @@ begin
 
     s.summary     = "Autoscale your Heroku dynos"
     s.description = s.summary
-    s.author      = "David Dollar"
-    s.email       = "ddollar@gmail.com"
-    s.homepage    = "http://github.com/ddollar/heroku-autoscale"
+    s.author      = "Matt Beedle"
+    s.email       = "mattbeedle@googlemail.com"
+    s.homepage    = "http://github.com/mbeedle/heroku-autoscale"
 
     s.platform = Gem::Platform::RUBY
     s.has_rdoc = false
@@ -29,7 +29,7 @@ begin
     s.add_development_dependency 'rspec',     '~> 2.0.0'
 
     s.add_dependency 'eventmachine'
-    s.add_dependency 'heroku', '~> 1.9'
+    s.add_dependency 'heroku', '>= 1.10'
     s.add_dependency 'rack',   '~> 1.0'
   end
   Jeweler::GemcutterTasks.new
