@@ -17,10 +17,13 @@ module Heroku
     end
 
     def call(env)
-      if options[:defer]
-        EventMachine.defer { autoscale(env) }
-      else
-        autoscale(env)
+      begin
+        if options[:defer]
+          EventMachine.defer { autoscale(env) }
+        else
+          autoscale(env)
+        end
+      rescue
       end
       app.call(env)
     end
