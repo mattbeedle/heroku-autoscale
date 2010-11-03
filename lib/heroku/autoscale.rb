@@ -5,7 +5,7 @@ require "rack"
 module Heroku
   class Autoscale
 
-    VERSION = "0.2.5"
+    VERSION = "0.2.6"
 
     attr_reader :app, :options, :last_scaled
 
@@ -17,15 +17,12 @@ module Heroku
     end
 
     def call(env)
-      begin
-        if options[:defer]
-          EventMachine.defer { autoscale(env) }
-        else
-          autoscale(env)
-        end
-      rescue
+      if options[:defer]
+        EventMachine.defer { autoscale(env) }
+      else
+        autoscale(env)
       end
-      app.call(env)
+    app.call(env)
     end
 
 private ######################################################################
@@ -45,6 +42,8 @@ private ######################################################################
       dynos = 1 if dynos < 1
 
       set_dynos(dynos) if dynos != original_dynos
+    rescue
+      nil
     end
 
     def check_options!
